@@ -1,0 +1,48 @@
+{
+  "name": "semver-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@commitlint/config-conventional": "^17.4.4",
+    "@release-it/conventional-changelog": "^5.1.1",
+    "commitlint-cli": "^1.1.3",
+    "husky": "^8.0.3",
+    "release-it": "^15.6.0"
+  },
+  "relase-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": false
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "infile": "CHANGELOG.md",
+        "preset": {
+          "name": "conventionalcommits",
+          "types": [
+            {
+              "type": "feat",
+              "section": "Features"
+            },
+            {
+              "type": "fix",
+              "section": "Bug Fixes"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

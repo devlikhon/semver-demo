@@ -23,9 +23,7 @@
     "github": {
       "release": true
     },
-    "npm": {
-      "publish": false
-    },
+    "npm": false,
     "plugins": {
       "@release-it/conventional-changelog": {
         "infile": "CHANGELOG.md",
@@ -39,7 +37,8 @@
             {
               "type": "fix",
               "section": "Bug Fixes"
-            }
+            },
+            {}
           ]
         }
       }
